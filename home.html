@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Squares</title>
+    <link rel="stylesheet" href="homeStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Strategic Squares</h1>
+    </header>
+    <div class="games-container">
+        <div class="gameBox">
+            <img src="chess.png" alt="Chess"> <!--Chat gpt generated image-->
+            <button class="play-button">Play Chess</button>
+            <span class="info-button" onclick="showInfo('Chess is a strategic board game for two players...')">?</span>
+        </div>
+        <div class="gameBox">
+            <img src="checkers.png" alt="Checkers"> <!--https://create.vista.com/unlimited/stock-photos/326325968/stock-photo-top-view-checkers-wooden-checkerboard-isolated-black/-->
+            <button class="play-button">Play Checkers</button>
+            <span class="info-button" onclick="showInfo('Checkers is a game for two players where the aim is to capture all opponent\'s pieces...')">?</span>
+        </div>
+        <div class="gameBox">
+            <img src="tic-tac-toe.png" alt="Tic Tac Toe">
+            <button class="play-button">Play Tic Tac Toe</button> <!--https://create.vista.com/unlimited/stock-photos/359772266/stock-photo-tic-tac-toe-game-blackboard-crossed-out-row-crosses-wooden/-->
+            <span class="info-button" onclick="showInfo('Tic Tac Toe is a simple game where two players try to line up three of their symbols...')">?</span>
+        </div>
+        <div class="gameBox">
+            <img src="2048.png" alt="Twenty Forty Eight"> <!--https://en.wikipedia.org/wiki/2048_%28video_game%29#/media/File:2048_logo.svg-->
+            <button class="play-button">Play 2048</button>
+            <span class="info-button" onclick="showInfo('2048 is a one player game where...')">?</span>
+        </div>
+    </div>
+    <footer>
+        © 2024 Strategic Squares. All rights reserved.
+    </footer>
+    <script src="homeScript.js"></script>
+</body>
+</html>
