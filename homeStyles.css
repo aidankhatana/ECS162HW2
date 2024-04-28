@@ -1,51 +1,92 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    align-items: center; 
+    justify-content: center;
+    background-image: url("background.png");/*This image is from https://www.rawpixel.com/image/6130414/photo-image-background-texture-abstract*/
+    background-position: center;
 }
 header {
-    background: #333;
-    color: #fff;
+    font-weight: bold;
+    font-size: 2.0em; 
+    color: #E0E0E0;
     padding: 20px;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
+h3 {
+    font-weight: bold;
+    font-size: 2.0em; 
+    color: #E0E0E0;
+    padding: 3px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
 .games-container {
     display: flex;
-    justify-content: space-around;
-    flex-grow: 1;
-    padding: 20px;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%; 
+    margin-top: 20px; 
+    max-width: 400px;
 }
-.gameBox {
-    width: 20%;
-    background: #f0f0f0;
-    padding: 10px;
+
+.game-box {
+    width: 90%; 
+    max-width: 400px;
+    padding: 20px; 
     text-align: center;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; 
+    background-color: #f5f5f5; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; 
 }
+
 .gameBox img {
     width: 100%;
     height: auto;
+    max-width: 400px;
+    background-color: #333;
+    border-radius: 5px;
+    margin-bottom: 0;
 }
 .play-button {
-    display: block;
-    margin: 10px auto;
+    display: inline-block;
     padding: 10px 20px;
-    background: #007BFF;
+    background: #D2691E; 
     color: white;
     border: none;
+    border-radius: 5px; 
     cursor: pointer;
+    font-weight: bold;
+    width: 50%
 }
 .info-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    background: #004adf; 
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px; 
     cursor: pointer;
-    font-size: 24px;
-    color: #007BFF;
+    font-weight: bold;
+    width: 50%;
 }
+
+.gameButtons{
+    display: flex;
+    flex-direction: row;
+    margin-top: -5px; 
+    margin-bottom: 100px;
+}
+
 footer {
     background: #333;
     color: #fff;
