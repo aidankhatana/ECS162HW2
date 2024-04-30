@@ -1,0 +1,58 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-color: #bbada0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.grid div {
+    background-color: #cdc1b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #776e65;
+    border-radius: 3px;
+    height: 100px;
+}
+
+.header {
+    text-align: center;
+}
+
+#scoreContainer {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px;
+}
+
+.grid div.tile-2 { background-color: #eee4da; color: #776e65; }
+.grid div.tile-4 { background-color: #ede0c8; color: #776e65; }
+.grid div.tile-8 { background-color: #f2b179; color: #f9f6f2; }
+.grid div.tile-16 { background-color: #f59563; color: #f9f6f2; }
+.grid div.tile-32 { background-color: #f67c5f; color: #f9f6f2; }
+.grid div.tile-64 { background-color: #f65e3b; color: #f9f6f2; }
+.grid div.tile-128 { background-color: #edcf72; color: #f9f6f2; }
+.grid div.tile-256 { background-color: #edcc61; color: #f9f6f2; }
+.grid div.tile-512 { background-color: #edc850; color: #f9f6f2; }
+.grid div.tile-1024 { background-color: #edc53f; color: #f9f6f2; }
+.grid div.tile-2048 { background-color: #edc22e; color: #f9f6f2; }
+
+
+
+button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #8f7a66;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

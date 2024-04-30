@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     align-items: center; 
     justify-content: center;
-    background-image: url("background.png");/*This image is from https://www.rawpixel.com/image/6130414/photo-image-background-texture-abstract*/
+    background-image: url("images/background.png");/*This image is from https://www.rawpixel.com/image/6130414/photo-image-background-texture-abstract*/
     background-position: center;
 }
 header {
