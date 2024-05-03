@@ -32,22 +32,25 @@
 
 <body>
     <header>
-        <h1><a href="../home.html">Game Arcade</a></h1>
+        <h1><a href="../home.html">Strategic Squares</a></h1>
     </header>
-    <div class="column">
-        <div id="menu">
-            <h1>Checkers</h1>
-            <div class="buttons">
-                <button onclick="Play()">Restart</button>
-                <button onclick="Rules()">Rules</button>
+    <div class="flex">
+        <div class="column">
+            <div id="menu">
+                <h1>Checkers</h1>
+                <div class="buttons">
+                    <button onclick="Play()">Restart</button>
+                    <button onclick="Rules()">Rules</button>
+                </div>
+                <div id="log"></div>
+                <p>stroibot, All rights reserved © 2018</p>
             </div>
-            <div id="log"></div>
-            <p>stroibot, All rights reserved © 2018</p>
+        </div>
+        <div id="board">
+            <div class="tiles"></div>
         </div>
     </div>
-    <div id="board">
-        <div class="tiles"></div>
-    </div>
+   
 </body>
 
 </html>
