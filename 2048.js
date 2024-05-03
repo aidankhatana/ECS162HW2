@@ -5,35 +5,34 @@ let score = 0;
 let gridState = new Array(16).fill(undefined);
 
 function startGame() {
-    clearGrid();
-    score = 0;
-    scoreDisplay.innerHTML = score;
+    resetGameState(); //clear game state and the display
+    resetScore();//reset score
     generate();
-    generate();
-    renderGrid();
+    generate();// generate two random tiles
+    renderGrid();//render grid with new tiles
 }
 
-function clearGrid() {
-    gridState.fill(undefined);
-    renderGrid();
+function resetGameState() {
+    gridState.fill(undefined);  
+    gridDisplay.innerHTML = ""; // clear gird
+}
+
+function resetScore() {
+    score = 0;
+    scoreDisplay.innerHTML = score;  //update score
 }
 
 function renderGrid() {
-    clearGrid(); 
+    gridDisplay.innerHTML = ""; 
     gridState.forEach(renderTile); 
 }
 
-function clearGrid() {
-    gridDisplay.innerHTML = ""; 
-}
-
 function renderTile(tile) {
-    const gridCell = document.createElement('div'); 
-    gridCell.textContent = tile ? tile : ""; 
-    gridCell.className = tile ? `tile-${tile}` : ""; 
-    gridDisplay.appendChild(gridCell); 
+    const gridCell = document.createElement('div');
+    gridCell.textContent = tile || ""; 
+    gridCell.className = tile ? `tile-${tile}` : "tile-empty"; 
+    gridDisplay.appendChild(gridCell);
 }
-
 
 function generate() {
     let emptyCells = gridState.map((val, idx) => val === undefined ? idx : null).filter(v => v !== null);
@@ -41,40 +40,30 @@ function generate() {
         let randomNumberIndex = Math.floor(Math.random() * emptyCells.length);
         gridState[emptyCells[randomNumberIndex]] = Math.random() > 0.5 ? 2 : 4;
         renderGrid();
-        checkForGameOver();
     }
+    checkForGameOver();
 }
 
 function checkForGameOver() {
-    let allSquaresFull = true;
-    let noPossibleMoves = true;
+    let emptyCellsExist = gridState.includes(undefined);
+    let noPossibleMoves = !canMove();
 
-    //check all squares full
-    for (let i = 0; i < gridDisplay.children.length; i++) {
-        if (gridDisplay.children[i].innerHTML === "") {
-            allSquaresFull = false;
-            break;
-        }
-    }
-
-    //check no possible moves left
-    for (let i = 0; i < gridDisplay.children.length; i++) {
-        let currentTile = parseInt(gridDisplay.children[i].innerHTML);
-        let rightTile = i % 4 !== 3 ? parseInt(gridDisplay.children[i + 1].innerHTML) : null;
-        let bottomTile = i < 12 ? parseInt(gridDisplay.children[i + 4].innerHTML) : null;
-
-        if (currentTile === rightTile || currentTile === bottomTile) {
-            noPossibleMoves = false;
-            break;
-        }
-    }
-
-    //game over
-    if (allSquaresFull && noPossibleMoves) {
+    if (!emptyCellsExist && noPossibleMoves) {
         alert("Game Over! Your final score is: " + score);
     }
 }
 
+function canMove() {
+    for (let i = 0; i < gridState.length; i++) {
+        if (gridState[i] === undefined) continue;  // skip empty
+        let current = gridState[i];
+
+        let right = i % 4 !== 3 ? gridState[i + 1] : null;
+        let down = i < 12 ? gridState[i + 4] : null;
+        if (current === right || current === down) return true;
+    }
+    return false;
+}
 
 
 document.addEventListener('keyup', function(e) { 
@@ -215,7 +204,6 @@ function moveLeft() {
     }
     return moved;
 }
-
 
 
 function moveRight() {

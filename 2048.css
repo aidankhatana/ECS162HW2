@@ -1,3 +1,48 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #faf8ef;
+    margin: 0;
+    padding: 0;
+    background-image: url("images/background.png");/*This image is from https://www.rawpixel.com/image/6130414/photo-image-background-texture-abstract*/
+}
+
+header {
+    font-weight: bold;
+    font-size: 2.0em; 
+    color: #E0E0E0;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em; 
+}
+
+.game-play-area {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #bbada0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+#scoreContainer {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background: #bbada0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -5,8 +50,6 @@
     background-color: #bbada0;
     padding: 10px;
     border-radius: 5px;
-    max-width: 500px;
-    margin: auto;
 }
 
 .grid div {
@@ -19,20 +62,12 @@
     color: #776e65;
     border-radius: 3px;
     height: 100px;
+    transition: background-color 0.3s;
 }
 
-.header {
-    text-align: center;
-}
 
-#scoreContainer {
-    text-align: center;
-    font-size: 24px;
-    margin: 20px;
-}
-
-.grid div.tile-2 { background-color: #eee4da; color: #776e65; }
-.grid div.tile-4 { background-color: #ede0c8; color: #776e65; }
+.grid div.tile-2 { background-color: #eee4da; }
+.grid div.tile-4 { background-color: #ede0c8; }
 .grid div.tile-8 { background-color: #f2b179; color: #f9f6f2; }
 .grid div.tile-16 { background-color: #f59563; color: #f9f6f2; }
 .grid div.tile-32 { background-color: #f67c5f; color: #f9f6f2; }
@@ -44,9 +79,7 @@
 .grid div.tile-2048 { background-color: #edc22e; color: #f9f6f2; }
 
 
-
 button {
-    display: block;
     width: 200px;
     padding: 10px;
     margin: 20px auto;
@@ -55,4 +88,25 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #9f8a76;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+footer {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    background-color: #bbada0;
+    color: #ffffff;
+    font-size: 14px;
 }
